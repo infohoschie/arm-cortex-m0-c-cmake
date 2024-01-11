@@ -1,6 +1,6 @@
 # Arm Cortex-M0 Base Project
 
-Example Workspace für die Vorlesung Systemnahe Programmierung I an der
+Example Workspace für die Vorlesung Systemnahe Programmierung II an der
 DHWB Ravensburg.
 
 ## Arm Documentation
@@ -51,7 +51,7 @@ sudo pacman -S cmake
 
 ## Building
 Auschecken des Quellcodes:
-`git clone https://github.com/infohoschie/arm-cortex-m0-cmake.git`
+`git clone https://github.com/infohoschie/arm-cortex-m0-c-cmake.git`
 
 Erstellen des Build Mittels CMake Presets:
 ```cmake --preset arm-cortex-m0-unix```
@@ -72,19 +72,21 @@ oder
 
 ## QEMU Emulator starten und mit GDB verbinden
 QEMU und GDB müssen in unterschiedlichen Konsolen (Shells) gestartet werden.
- - QEMU Emlation Starten:
+ - QEMU Emulation Starten:
    `qemu-system-arm -M microbit -device loader,file=build-cortex-m0/testApp.elf -nographic -S -s`
- - GDB zu WEMU verbinden:
+ - GDB zu QEMU verbinden:
    `gdb-multiarch build-cortex-m0/testApp.elf -ex "target extended-remote localhost:1234" -ex "load"`
+
+Um QEMU zu beenden die Tastenkombination `<strg> + a` und anschließend `x` nutzen.
 
 ## IDEs
 ### Jetbrains CLion
-Das Projekt kann direkt in der IDE geöffnet (ausgechecked) werden.
+Das Projekt kann direkt in der IDE geöffnet (ausgecheckt) werden.
 Die CMake Presets werden direkt als build-target angeboten
 
-Der Integrierte Debugger kann direkt genutzt werden.
-Unter der Run-Configuration kann der QEMU Aufruf als "Native Application" hinzugefügt werden
-Unter debug Configuration kann eine "Remote Debug" konfiguration angelegt werden, bei der unter "target remote args" die verbindungsdetails angeben und als symbol filedie testApp.elf referenziert werden kann.
+Der integrierte Debugger kann direkt genutzt werden.
+Unter der Run-Configuration kann der QEMU Aufruf als "Native Application" hinzugefügt werden.
+Unter debug Configuration kann eine "Remote Debug" Konfiguration angelegt werden, bei der unter "target remote args" die Verbindungsdetails angeben und als *symbol file* die *testApp.elf* referenziert werden kann.
 
 ### Visual Studio Code
 
