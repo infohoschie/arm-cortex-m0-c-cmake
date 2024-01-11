@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "arm-cortex-m0-base",
+      "hidden": true,
+      "binaryDir": "build-cortex-m0",
+      "toolchainFile": "toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "inherits": ["arm-cortex-m0-base"],
+      "name": "arm-cortex-m0-unix",
+      "displayName": "GCC Arm EABI (Unix Makefiles)",
+      "description": "GCC Arm EABI (Unix Makefiles)",
+      "generator": "Unix Makefiles"
+    },
+    {
+      "inherits": ["arm-cortex-m0-base"],
+      "name": "arm-cortex-m0-mingw",
+      "displayName": "GCC Arm EABI (MinGW Makefiles)",
+      "description": "GCC Arm EABI (MinGW Makefiles)",
+      "generator": "MinGW Makefiles"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "arm-cortex-m0-unix",
+      "displayName": "GCC Arm EABI (Unix Makefiles)",
+      "description": "GCC Arm EABI (Unix Makefiles)",
+      "configurePreset": "arm-cortex-m0-unix"
+    },
+    {
+      "name": "arm-cortex-m0-mingw",
+      "displayName": "GCC Arm EABI (MinGW Makefiles)",
+      "description": "GCC Arm EABI (MinGW Makefiles)",
+      "configurePreset": "arm-cortex-m0-mingw"
+    }
+  ]
+}

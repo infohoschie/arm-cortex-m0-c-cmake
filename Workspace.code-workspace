@@ -1,0 +1,67 @@
+{
+	/* Just use everything in this folder */
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	
+	"settings": {
+
+		/* Add the Start Command for Qemu to a orange button in statusbar */
+		"actionButtons": {
+			"reloadButton": null,
+			"defaultColor": "white",
+			"commands": [
+				{
+					"name": "Start Qemu",
+					"color": "#dd8800",
+					"command": "qemu-system-arm -M microbit -device loader,file=build-cortex-m0/testApp.elf -nographic -S -s",
+					"singleInstance": true
+				}
+			]
+		},
+
+		/* Clean up the CMake interface, by removing unnecessary icons */
+		"cmake.touchbar.advanced": {"launch": "hidden", "debug": "hidden"},
+		"cmake.statusbar.advanced": {
+			"debug": {"visibility": "hidden"},
+			"ctest": {"visibility": "hidden"},
+			"launch": {"visibility": "hidden"},
+			"launchTarget": {"visibility": "hidden"},
+			"buildTarget": {"visibility": "hidden"}
+		}
+
+	},
+
+	/* Launch Config for "Native Debug" Extension */
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "gdb",
+				"request": "attach",
+				"name": "Attach to Target",
+				"gdbpath": "/usr/bin/gdb-multiarch",
+				"executable": "./build-cortex-m0/testApp.elf",
+				"target": ":1234",
+				"remote": true,
+				"cwd": "${workspaceRoot}",
+				"valuesFormatting": "parseText",
+				"stopAtConnect": true
+			}
+		]
+	},
+
+	/* Used Extensions */
+	"extensions": {
+		"recommendations": [
+			"jkearins.action-buttons-ext",
+			"webfreak.debug",
+			"maxmitti.cmake-tools-fork",
+			"twxs.cmake",
+			"dan-c-underwood.arm"
+		]
+	}
+
+}
