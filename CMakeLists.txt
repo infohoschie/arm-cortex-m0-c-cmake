@@ -16,7 +16,9 @@ target_sources(
   PRIVATE
     entry.S
     entry_c.c
-    main.c )
+    main.c
+    RegisterAccess.h
+    RegisterAccess.c )
 
 target_link_options(
   testApp
