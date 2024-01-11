@@ -7,7 +7,7 @@
  *
  * @author Thomas Vogt, thomas@thomas-vogt.de
  *
- * @brief ARM Cortex-M4 C-Entry Point.
+ * @brief ARM Cortex M0 C-Entry Point.
  **/
 
 #include <stdint.h>
@@ -18,7 +18,7 @@ char myModString[] = "MY MOD STRING";
 
 char myNotInitData[255];
 
-extern void main(void); // TODO: make it better!!!
+extern int main( void ); // TODO: make it better!!!
 
 /**
  * @brief First C-Code startet from CPU initialisation.
@@ -41,7 +41,7 @@ __attribute__((used)) void SystemInit( void )
   copyData();
 
   main();
-  
+
   for (;;);
 }
 
