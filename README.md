@@ -47,7 +47,9 @@ sudo pacman -S cmake
 ```
 
 ### macOS
-```brew install gcc-arm-embedded```
+```brew install gcc-arm-embedded cmake```
+#### Apple Silicon
+```brew install arm-none-eabi-gdb```
 
 ## Building
 Auschecken des Quellcodes:
@@ -59,7 +61,7 @@ oder
 ```cmake --preset arm-cortex-m0-mingw```
 
 Bauen Mittels CMake Presets:
-```cmake --build --preset arm-cortex-m0```
+```cmake --build --preset arm-cortex-m0-unix```
 oder
 ```cmake --build --preset arm-cortex-m0-mingw```
 
@@ -72,10 +74,13 @@ oder
 
 ## QEMU Emulator starten und mit GDB verbinden
 QEMU und GDB müssen in unterschiedlichen Konsolen (Shells) gestartet werden.
- - QEMU Emulation Starten:
+### - QEMU Emulation Starten:
    `qemu-system-arm -M microbit -device loader,file=build-cortex-m0/testApp.elf -nographic -S -s`
- - GDB zu QEMU verbinden:
+### - GDB zu QEMU verbinden:
    `gdb-multiarch build-cortex-m0/testApp.elf -ex "target extended-remote localhost:1234" -ex "load"`
+#### MacOS on Apple Silicon: 
+   `arm-none-eabi-gdb build-cortex-m0/testApp.elf -ex "target extended-remote localhost:1234" -ex "load"`
+   
 
 Um QEMU zu beenden die Tastenkombination `<strg> + a` und anschließend `x` nutzen.
 
@@ -102,3 +107,6 @@ Diese sind ebenfalls als empfohlene Extensions im Workspace definiert.
 Nach Installation erkennt VScode die CMake Presets und bietet diese gleich an.
 Ebenfalls wird in der Statusleiste ein Button **Start Qemu** hinzugefügt,
 über diesen die QEmu-Session (also unser Target) gestartet werden kann.
+
+#### Wichtig:
+Zwischen der Extension [maxmitti.cmake-tools-fork](https://marketplace.visualstudio.com/items?itemName=maxmitti.cmake-tools-fork) und [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) kommt es zu Konflikten. Wichtig in diesem Projekt ist, dass der "Build"-Button in der Statusleiste nicht funktioniert, wenn beide Extensions installiert sind. Deswegen sollte die Extension [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) deaktiviert werden.

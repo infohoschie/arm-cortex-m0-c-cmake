@@ -61,6 +61,9 @@
 			"maxmitti.cmake-tools-fork",
 			"twxs.cmake",
 			"dan-c-underwood.arm"
+		],
+		"unwantedRecommendations": [
+			"ms-vscode.cmake-tools",
 		]
 	}
 
