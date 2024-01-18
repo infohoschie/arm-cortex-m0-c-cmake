@@ -107,3 +107,6 @@ Diese sind ebenfalls als empfohlene Extensions im Workspace definiert.
 Nach Installation erkennt VScode die CMake Presets und bietet diese gleich an.
 Ebenfalls wird in der Statusleiste ein Button **Start Qemu** hinzugefügt,
 über diesen die QEmu-Session (also unser Target) gestartet werden kann.
+
+#### Wichtig:
+Zwischen der Extension [maxmitti.cmake-tools-fork](https://marketplace.visualstudio.com/items?itemName=maxmitti.cmake-tools-fork) und [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) kommt es zu Konflikten. Wichtig in diesem Projekt ist, dass der "Build"-Button in der Statusleiste nicht funktioniert, wenn beide Extensions installiert sind. Deswegen sollte die Extension [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) deaktiviert werden.
