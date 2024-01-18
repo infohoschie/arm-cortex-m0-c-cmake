@@ -48,6 +48,8 @@ sudo pacman -S cmake
 
 ### macOS
 ```brew install gcc-arm-embedded cmake```
+#### Apple Silicon
+```brew install arm-none-eabi-gdb```
 
 ## Building
 Auschecken des Quellcodes:
