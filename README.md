@@ -59,7 +59,7 @@ oder
 ```cmake --preset arm-cortex-m0-mingw```
 
 Bauen Mittels CMake Presets:
-```cmake --build --preset arm-cortex-m0```
+```cmake --build --preset arm-cortex-m0-unix```
 oder
 ```cmake --build --preset arm-cortex-m0-mingw```
 
