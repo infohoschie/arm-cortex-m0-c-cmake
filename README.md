@@ -47,7 +47,7 @@ sudo pacman -S cmake
 ```
 
 ### macOS
-```brew install gcc-arm-embedded```
+```brew install gcc-arm-embedded cmake```
 
 ## Building
 Auschecken des Quellcodes:
