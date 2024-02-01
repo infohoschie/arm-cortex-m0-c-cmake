@@ -13,13 +13,12 @@
 
 #include "RegisterAccess.h"
 
-int main( void )
-{
-  uint32_t value = ReadFromRegister( 0x20000000 );
+int main(void) {
+  uint32_t value = ReadFromRegister(0x20000000);
 
   value = ~value;
 
-  WriteToRegister( 0x20000000, value );
+  WriteToRegister(0x20000000, value);
 
   return 0;
 }
