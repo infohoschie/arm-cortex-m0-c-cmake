@@ -1,0 +1,3 @@
+[submodule "BattleShipsModules"]
+	path = modules
+	url = git@github.com:DHBW-SysProgCompiler/BattleShipsModules.git
