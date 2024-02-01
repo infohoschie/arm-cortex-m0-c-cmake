@@ -15,11 +15,11 @@
 
 int main( void )
 {
-  uint32_t value = ReadFromRegister( 0x20000000 );
+  //uint32_t value = ReadFromRegister( 0x20000000 );
 
-  value = ~value;
+  //value = ~value;
 
-  WriteToRegister( 0x20000000, value );
+  //WriteToRegister( 0x20000000, value );
 
   return 0;
 }
