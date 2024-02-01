@@ -5,7 +5,7 @@
 			"path": "."
 		}
 	],
-	
+
 	"settings": {
 
 		/* Add the Start Command for Qemu to a orange button in statusbar */
@@ -16,7 +16,7 @@
 				{
 					"name": "Start Qemu",
 					"color": "#dd8800",
-					"command": "qemu-system-arm -M microbit -device loader,file=build-cortex-m0/testApp.elf -nographic -S -s",
+					"command": "qemu-system-arm -M microbit -device loader,file=build-cortex-m0/testApp.elf -nographic -S -s -serial mon:stdio",
 					"singleInstance": true
 				}
 			]
