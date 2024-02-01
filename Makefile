@@ -1,4 +1,5 @@
-CFILES=*.c
-
 format:
-	clang-format --style=LLVM -i $(CFILES)
+	find . -name '*.[ch]' -exec clang-format --style=LLVM -i {} +
+
+init_submodule:
+	git submodule update --init --recursive
