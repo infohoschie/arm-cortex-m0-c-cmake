@@ -17,8 +17,19 @@ target_sources(
     entry.S
     entry_c.c
     main.c
-    RegisterAccess.h
-    RegisterAccess.c )
+
+    register_access.h
+    register_access.c
+
+    random.h
+    random.c
+
+    nvic.h
+    timer.h
+    timer.c
+
+    uart.h
+    uart.c )
 
 target_link_options(
   testApp

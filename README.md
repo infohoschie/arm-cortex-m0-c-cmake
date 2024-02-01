@@ -75,7 +75,7 @@ oder
 ## QEMU Emulator starten und mit GDB verbinden
 QEMU und GDB müssen in unterschiedlichen Konsolen (Shells) gestartet werden.
 ### - QEMU Emulation Starten:
-   `qemu-system-arm -M microbit -device loader,file=build-cortex-m0/testApp.elf -nographic -S -s`
+   `qemu-system-arm -M microbit -device loader,file=build-cortex-m0/testApp.elf -nographic -S -s -serial mon:stdio`
 ### - GDB zu QEMU verbinden:
    `gdb-multiarch build-cortex-m0/testApp.elf -ex "target extended-remote localhost:1234" -ex "load"`
 #### MacOS on Apple Silicon: 
