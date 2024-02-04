@@ -21,9 +21,9 @@ set( CMAKE_EXECUTABLE_SUFFIX_CXX ".elf" )
 set( CMAKE_EXECUTABLE_SUFFIX_ASM ".elf" )
 
 # Set the Flags for Cortex-M0
-set( CMAKE_C_FLAGS       "-nostdlib -mcpu=cortex-m0" )
-set( CMAKE_CXX_FLAGS     "-nostdlib -mcpu=cortex-m0" )
-set( CMAKE_ASM_FLAGS     "-nostdlib -mcpu=cortex-m0" )
+set( CMAKE_C_FLAGS       "-ffreestanding -nostdlib -mcpu=cortex-m0" )
+set( CMAKE_CXX_FLAGS     "-ffreestanding -nostdlib -mcpu=cortex-m0" )
+set( CMAKE_ASM_FLAGS     "-ffreestanding -nostdlib -mcpu=cortex-m0" )
 
 # With startup files (auto-init):
 #set(CMAKE_EXE_LINKER_FLAGS "--specs=nosys.specs" CACHE INTERNAL "")

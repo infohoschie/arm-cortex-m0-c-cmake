@@ -11,15 +11,14 @@
  * @brief *Main* Entry
  **/
 
-#include "RegisterAccess.h"
+#include "modules/register_access.h"
 
-int main( void )
-{
-  uint32_t value = ReadFromRegister( 0x20000000 );
+int main(void) {
+  uint32_t value = register_read(0x20000000);
 
   value = ~value;
 
-  WriteToRegister( 0x20000000, value );
+  register_write(0x20000000, value);
 
   return 0;
 }

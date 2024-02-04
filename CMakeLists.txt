@@ -16,9 +16,27 @@ target_sources(
   PRIVATE
     entry.S
     entry_c.c
-    main.c
-    RegisterAccess.h
-    RegisterAccess.c )
+    main.c 
+    
+    # Register Access
+    modules/register_access.h
+    modules/register_access.c
+    
+    # Interrupts
+    modules/nvic.h
+    
+    # RNG
+    modules/random.h
+    modules/random.c
+
+    # Timer
+    modules/timer.h
+    modules/timer.c
+
+    # UART
+    modules/uart.h
+    modules/uart.c
+  )
 
 target_link_options(
   testApp
