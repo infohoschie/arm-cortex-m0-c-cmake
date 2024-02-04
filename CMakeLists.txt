@@ -36,6 +36,10 @@ target_sources(
     # UART
     modules/uart.h
     modules/uart.c
+
+    # Sreen-Print
+    modules/screen_control.h
+    modules/screen_control.c
   )
 
 target_link_options(
