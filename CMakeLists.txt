@@ -41,8 +41,8 @@ target_sources(
     modules/heap_allocations.h
 
     # Sreen-Print
-    modules/screen_control.h
-    modules/screen_control.c
+    modules/term_control.h
+    modules/term_control.c
   )
 
 target_link_options(
