@@ -40,9 +40,13 @@ target_sources(
     # Heap-Allocations
     modules/heap_allocations.h
 
-    # Sreen-Print
+    # Term-Control
     modules/term_control.h
     modules/term_control.c
+
+    # Math
+    modules/math.h
+    modules/math.c
   )
 
 target_link_options(
